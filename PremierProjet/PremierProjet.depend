@@ -1,5 +1,19 @@
 # depslib dependency file v1.0
-1649082727 source:c:\tp_c++\premierprojet\main.cpp
+1649087666 source:c:\tp_c++\premierprojet\main.cpp
+	<iostream>
+	"jeu.h"
+	"menu.h"
+
+1649087649 c:\tp_c++\premierprojet\constantes.h
+
+1649087290 source:c:\tp_c++\premierprojet\jeu.cpp
 	<iostream>
 	<stdlib.h>
+	"jeu.h"
+	"constantes.h"
+
+1649087402 c:\tp_c++\premierprojet\jeu.h
+
+1649087701 c:\tp_c++\premierprojet\menu.h
+	"constantes.h"
 
