@@ -3,8 +3,10 @@
 
 using namespace std;
 
-void jouer(void) {  //fonction consistuant le coeur du jeu
-    int aDeviner{rand() % 1000 + 1}; //nbre aléatoire entre 1 et 1000
+void Jouer(void) {  //fonction consistuant le coeur du jeu
+    const auto BORNE_MIN{1};
+    const auto BORNE_MAX{1000};
+    int aDeviner{rand() % BORNE_MAX + BORNE_MIN}; //nbre aléatoire entre 1 et 1000
     int proposition{0};
     bool partieGagnee {false};
 
@@ -29,24 +31,46 @@ void jouer(void) {  //fonction consistuant le coeur du jeu
     }
 }
 
+enum class ChoixMenu
+{
+    JOUER='j',
+    QUITTER='q',
+    INCORRECT
+};
+
+ChoixMenu SelectionMenu(void) {
+    char saisieChoixMenu;
+
+    cout << "Bienvenu au Juste Prix!" << endl;
+        cout << static_cast<char>(ChoixMenu::JOUER) << " - Jouer" << endl;
+        cout << static_cast<char>(ChoixMenu::QUITTER) << " - Quitter" << endl;
+        cout << "Que voulez-vous faire?" << endl;
+        cin >> saisieChoixMenu;
+
+         if (saisieChoixMenu == static_cast<char>(ChoixMenu::JOUER) || saisieChoixMenu == static_cast<char>(ChoixMenu::QUITTER)) {
+            return static_cast<ChoixMenu>(saisieChoixMenu);
+        } else {
+            return ChoixMenu::INCORRECT;
+        }
+
+}
+
 int main()
 {
-    int choixMenu{0};
+    auto choixMenu{ChoixMenu::JOUER};
     bool exitProg {false};
 
     while (!exitProg) { //boucle permettant de faire plusieurs parties tant que l'utilisateur veut continuer
-        cout << "Bienvenu au Juste Prix!" << endl;
-        cout << "1-Nouvelle Partie" << endl;
-        cout << "2-Quitter" << endl;
-        cout << "Que voulez-vous faire?";
-        cin >> choixMenu;
+
+
+       choixMenu=SelectionMenu();
 
         switch ( choixMenu )    //switch pour donner le choix à l'utilisateur de jouer ou de quitter
       {
-         case 1:
-            jouer();
+         case ChoixMenu::JOUER:
+            Jouer();
             break;
-         case 2:
+         case ChoixMenu::QUITTER:
             exitProg=true;
             break;
          default:
