@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #include "fonctions.h"
 #include "variables.h"
@@ -30,15 +31,27 @@ void Bienvenue(string &nomJoueur1, string &nomJoueur2)
     cout << nomJoueur1 <<" sera la joueur 1 et "<< nomJoueur2 <<" sera le joueur 2." <<endl;
 }
 
-void affichageTableau(string ligne0, string ligne1, string ligne2, string ligne3,string ligne4, string ligne5, string ligne6) {
+void AffichageTableau(int numJoueur) {
     cout << "=================" << endl;
-    cout << ligne0 << endl;
-    cout << ligne1 << endl;
-    cout << ligne2 << endl;
-    cout << ligne3 << endl;
-    cout << ligne4 << endl;
-    cout << ligne5 << endl;
-    cout << ligne6 << endl;
+    if (numJoueur==1) {
+        cout << ligne0_J1 << endl;
+        cout << ligne1_J1 << endl;
+        cout << ligne2_J1 << endl;
+        cout << ligne3_J1 << endl;
+        cout << ligne4_J1 << endl;
+        cout << ligne5_J1 << endl;
+        cout << ligne6_J1 << endl;
+    } else if (numJoueur==2) {
+        cout << ligne0_J2 << endl;
+        cout << ligne1_J2 << endl;
+        cout << ligne2_J2 << endl;
+        cout << ligne3_J2 << endl;
+        cout << ligne4_J2 << endl;
+        cout << ligne5_J2 << endl;
+        cout << ligne6_J2 << endl;
+    }
+
+    cout << "=================" << endl;
 }
 
 void MiseEnPlace(int numJoueur) {
@@ -48,10 +61,10 @@ void MiseEnPlace(int numJoueur) {
     while (nbreNaviresAPlacer>0) {
             if (numJoueur==1)
             {
-                affichageTableau(ligne0_J1,ligne1_J1,ligne2_J1,ligne3_J1,ligne4_J1,ligne5_J1,ligne6_J1);
-                cout << "selectionner la colonne où vous voulez placer un navire:" <<endl;
+                AffichageTableau(numJoueur);
+                cout << "Joueur 1, selectionnez la colonne où vous voulez placer un navire:" <<endl;
                 cin >> colonnePlacement;
-                cout << "selectionner la ligne où vous voulez placer un navire:" <<endl;
+                cout << "Joueur 1, selectionnez la ligne où vous voulez placer un navire:" <<endl;
                 cin >> lignePlacement;
                 ModificationLigne(1,colonnePlacement,lignePlacement,'X');
                 string s;
@@ -61,10 +74,10 @@ void MiseEnPlace(int numJoueur) {
             }
             else if (numJoueur==2)
             {
-                affichageTableau(ligne0_J2,ligne1_J2,ligne2_J2,ligne3_J2,ligne4_J2,ligne5_J2,ligne6_J2);
-                cout << "selectionner la colonne où vous voulez placer un navire:" <<endl;
+                AffichageTableau(numJoueur);
+                cout << "Joueur 2, selectionnez la colonne où vous voulez placer un navire:"<<endl;
                 cin >> colonnePlacement;
-                cout << "selectionner la ligne où vous voulez placer un navire:" <<endl;
+                cout << "Joueur 2, selectionnez la ligne où vous voulez placer un navire:"<<endl;
                 cin >> lignePlacement;
                 ModificationLigne(2,colonnePlacement,lignePlacement,'X');
                 string s;
@@ -138,21 +151,21 @@ void Tir(int numJoueur) {
     if (numJoueur==1) {
         if (touche) {
         ModificationLigne(numJoueur,colonneTir,ligneTir,'X');
-        affichageTableau(ligne0_J1,ligne1_J1,ligne2_J1,ligne3_J1,ligne4_J1,ligne5_J1,ligne6_J1);
+        AffichageTableau(numJoueur);
         cout<< "Touché!"<<endl;
     } else {
         ModificationLigne(numJoueur,colonneTir,ligneTir,'O');
-        affichageTableau(ligne0_J1,ligne1_J1,ligne2_J1,ligne3_J1,ligne4_J1,ligne5_J1,ligne6_J1);
+        AffichageTableau(numJoueur);
         cout<< "Raté!"<<endl;
     }
     } else if (numJoueur==2) {
         if (touche) {
         ModificationLigne(numJoueur,colonneTir,ligneTir,'X');
-        affichageTableau(ligne0_J2,ligne1_J2,ligne2_J2,ligne3_J2,ligne4_J2,ligne5_J2,ligne6_J2);
+        AffichageTableau(numJoueur);
         cout<< "Touché!"<<endl;
     } else {
         ModificationLigne(numJoueur,colonneTir,ligneTir,'O');
-        affichageTableau(ligne0_J2,ligne1_J2,ligne2_J2,ligne3_J2,ligne4_J2,ligne5_J2,ligne6_J2);
+        AffichageTableau(numJoueur);
         cout<< "Raté!"<<endl;
     }
     }
@@ -168,6 +181,8 @@ bool TestTouche (int numJoueur,char colonneTir,char ligneTir) {
             for (int i=0; i<PlacementsJ2.size(); i++) {
                     if (PlacementsJ2[i]== s) {
                             touche=true;
+                            cout<<PlacementsJ2[i]<<endl;
+                            PlacementsJ2.erase(PlacementsJ2.begin() + i);
                             }
             }
 
@@ -175,6 +190,7 @@ bool TestTouche (int numJoueur,char colonneTir,char ligneTir) {
         for (int i=0; i<PlacementsJ1.size(); i++) {
                     if (PlacementsJ1[i]== s) {
                             touche=true;
+                            PlacementsJ1.erase(PlacementsJ1.begin() + i);
                             }
             }
     }
@@ -197,4 +213,14 @@ ligne3_J2= "3| | | | | | | |";
 ligne4_J2= "4| | | | | | | |";
 ligne5_J2= "5| | | | | | | |";
 ligne6_J2= "6| | | | | | | |";
+}
+
+int TestVictoire () {
+    int numJoueurVictoire={0};
+    if (PlacementsJ1.size()==0) {
+        numJoueurVictoire=2;
+    } else if (PlacementsJ2.size()==0) {
+        numJoueurVictoire=1;
+    }
+    return numJoueurVictoire;
 }

@@ -12,5 +12,7 @@ void ModificationLigne(int numJoueur, char colonne, char ligne, char modeModif);
 void Tir(int numJoueur);
 bool TestTouche (int numJoueur,char colonneTir,char ligneTir);
 void RAZTableau (void);
+void AffichageTableau(int numJoueur);
+int TestVictoire ();
 
 #endif // FONCTIONS_H_INCLUDED

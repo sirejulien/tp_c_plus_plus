@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1649169136 source:c:\tp_c++\projets_groupe\bataillenavale\fonctions.cpp
+1649174389 source:c:\tp_c++\projets_groupe\bataillenavale\fonctions.cpp
 	<iostream>
+	<vector>
 	"fonctions.h"
 	"variables.h"
 
-1649168764 c:\tp_c++\projets_groupe\bataillenavale\fonctions.h
+1649173443 c:\tp_c++\projets_groupe\bataillenavale\fonctions.h
 	<iostream>
 
-1649168776 source:c:\tp_c++\projets_groupe\bataillenavale\main.cpp
+1649173684 source:c:\tp_c++\projets_groupe\bataillenavale\main.cpp
 	<iostream>
 	"fonctions.h"
 
