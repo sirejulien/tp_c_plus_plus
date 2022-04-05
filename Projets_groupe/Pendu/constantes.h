@@ -1,0 +1,13 @@
+#ifndef CONSTANTES_H_INCLUDED
+#define CONSTANTES_H_INCLUDED
+
+#include<string>
+
+
+
+const auto NBR_ELEM_LISTE_MOTS=5;
+
+string ListeMots[5]={"BILBOQUET","ANTAGONISTE","FRELUQUET","BIZANTIN","MALANDRIN"};
+
+
+#endif // CONSTANTES_H_INCLUDED

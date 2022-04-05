@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1649152851 source:c:\tp_c++\projets_groupe\pendu\fonction.cpp
+	<iostream>
+	<vector>
+	<stdlib.h>
+	"fonctions.h"
+	"constantes.h"
+
+1649151160 c:\tp_c++\projets_groupe\pendu\fonctions.h
+	<iostream>
+	<vector>
+
+1649152803 source:c:\tp_c++\projets_groupe\pendu\main.cpp
+	<iostream>
+	<vector>
+	"fonctions.h"
+	<chrono>
+	<ctime>
+
+1649153226 c:\tp_c++\projets_groupe\pendu\constantes.h
+	<string>
+
