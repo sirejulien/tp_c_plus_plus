@@ -315,5 +315,5 @@ Optimisation du jeu du juste prix avec de nouveaux dossiers.
 Tests effectués et disponibles dans le GitHub.
 
 ## Deuxième jour (Mardi)
-Créer un pendu et un autre jeu un peu + compliqué pour la fin de journée.
-Objectif pour jeudi, créer un jeu assez complexe avec menu, rejouabilité, high score, ...
+Objectif pour jeudi : créer un jeu assez complexe avec menu, rejouabilité, high score, ...
+Avec Julien, on a fait un pendu complet avec des commentaires et un touché-coulé.
