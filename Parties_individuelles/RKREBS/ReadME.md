@@ -317,3 +317,8 @@ Tests effectués et disponibles dans le GitHub.
 ## Deuxième jour (Mardi)
 Objectif pour jeudi : créer un jeu assez complexe avec menu, rejouabilité, high score, ...
 Avec Julien, on a fait un pendu complet avec des commentaires et un touché-coulé.
+## Troisième jour (Mercredi)
+Installation de SFML pour CodeBlocks. Jeu du pendu fait et touché-coulé fait sans code pour gérer le cas ou un béta-testeur de jeu viendrait essayer notre jeu.
+Différence entre const et constexpr.
+Différence entre struct et class.
+
