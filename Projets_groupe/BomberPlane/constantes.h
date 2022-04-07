@@ -1,0 +1,8 @@
+#ifndef CONSTANTES_H_INCLUDED
+#define CONSTANTES_H_INCLUDED
+
+const auto WINDOW_WIDTH {1280};
+const auto WINDOW_HEIGHT {720};
+const auto SHOOT_COOLDOWN {1};
+
+#endif // CONSTANTES_H_INCLUDED

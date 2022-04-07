@@ -18,3 +18,7 @@ Vecteur Vecteur::operator * (float coefficient) const { //pourquoi const?
 Vecteur Vecteur::speedFromAngle(float size, float angleInDegree) {
     return {size*cos(angleInDegree/180.f*static_cast<float>(3.14)), size*sin(angleInDegree/180.f*3.14)};
 }
+
+float Vecteur::getSize() {
+    return sqrtf(x*x+y*y);
+}

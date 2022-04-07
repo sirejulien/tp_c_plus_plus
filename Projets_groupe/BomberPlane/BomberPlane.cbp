@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -30,7 +32,19 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="C:/SFML/SFML-2.5.1/include" />
 		</Compiler>
+		<Linker>
+			<Add library="sfml-graphics-d" />
+			<Add library="sfml-window-d" />
+			<Add library="sfml-system-d" />
+			<Add directory="C:/SFML/SFML-2.5.1/lib" />
+		</Linker>
+		<Unit filename="bombardier.cpp" />
+		<Unit filename="bombardier.h" />
+		<Unit filename="include/Vecteur.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Vecteur.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

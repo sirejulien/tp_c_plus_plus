@@ -10,6 +10,7 @@ struct Vecteur  //différence struct/class
         static Vecteur speedFromAngle(float size, float angleInDegree);
         float x{0.f};
         float y{0.f};
+        float getSize();
 
     private:
 };
