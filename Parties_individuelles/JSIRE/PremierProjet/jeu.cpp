@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void Proposition (int &refProposition) {
+void Proposition (int &refProposition) {    //fonction pour récupérer la proposition de prix
     int saisieProposition;
     cin >> saisieProposition;
     refProposition=saisieProposition;
@@ -23,7 +23,7 @@ void Jouer(void) {  //fonction consistuant le coeur du jeu
 
         Proposition(proposition);
 
-        if (aDeviner==proposition) {
+        if (aDeviner==proposition) {    //conditions de victoire
             cout << "Exact! Vous avez trouvé en " << nbrTentative << " tentatives" << endl;
             partieGagnee=true;
             break;

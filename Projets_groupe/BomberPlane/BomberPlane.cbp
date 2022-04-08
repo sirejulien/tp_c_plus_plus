@@ -40,8 +40,11 @@
 			<Add library="sfml-system-d" />
 			<Add directory="C:/SFML/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="bomb.cpp" />
+		<Unit filename="bomb.h" />
 		<Unit filename="bombardier.cpp" />
 		<Unit filename="bombardier.h" />
+		<Unit filename="constantes.h" />
 		<Unit filename="include/Vecteur.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Vecteur.cpp" />
